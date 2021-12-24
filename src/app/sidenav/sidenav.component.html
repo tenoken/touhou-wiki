@@ -1,0 +1,25 @@
+<mat-sidenav-container
+    class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav class="side-menu" #sidenav (keydown.escape)="close('escape')" disableClose>
+
+    <div class="element-center">
+        <img class="menu-avatar" src="../../assets/images/Daco_1026022.png" alt="Reimu Hakurei Avatar, HD Png Download - anime girl face png" title="Reimu Hakurei Avatar, HD Png Download - anime girl face png">
+ 
+        <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="touhou-background-image">
+    <p><button mat-button (click)="sidenav.open()">Open</button></p>
+    <!-- <p>Closed due to: {{reason}}</p> -->
+    <!--Post List-->
+    <!-- <touhou-post></touhou-post>
+    <touhou-post></touhou-post>
+    <touhou-post></touhou-post> -->
+    <!--Post List-->
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

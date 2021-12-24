@@ -1,0 +1,363 @@
+<!-- <sidenav></sidenav> -->
+
+<div class="container">
+  <div class="row">
+    <mat-card>
+      <div class="col-md-12">
+        <form [formGroup]="formGroup" class="example-form">
+          <div class="">
+            <h1>Title</h1>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <!-- <mat-label>A tale about Cirno's Advetures</mat-label> -->
+            <input
+              formControlName="title"
+              matInput
+              placeholder="Ex. A tale about Cirno's Advetures"
+              value="Sushi"
+            />
+          </mat-form-field>
+
+          <br />
+
+          <!-- <div class="col-md-12">
+            <div class="well">
+              <h1>Intro</h1>
+            </div>
+          </div>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Once upon a time, there was a fairy...</mat-label>
+            <input formControlName="title" matInput placeholder="Ex. Pizza" value="Sushi" />
+          </mat-form-field>
+  
+          <br> -->
+
+          <div class="">
+            <h1>Intro</h1>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <!-- <mat-label>This field is required</mat-label> -->
+            <textarea
+              formControlName="intro"
+              matInput
+              placeholder="Ex. Once upon a time, there was a fairy..."
+            ></textarea>
+          </mat-form-field>
+
+          <div class="">
+            <h1>Sections</h1>
+          </div>   
+          
+          <div *ngFor="let section of sections">
+            <!-- {{section}} -->
+
+            <br/>         
+            <br/>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>A tale about Cirno's Advetures</mat-label> -->
+              <input
+                formControlName="title{{sectionIdConuter}}"
+                matInput
+                placeholder="Section Title"
+                value="{{section}}"
+              />
+            </mat-form-field>
+
+            <br/>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="text{{sectionIdConuter}}"
+                matInput
+                placeholder="Section Content."
+                value="{{section}}"
+              ></textarea>
+            </mat-form-field>
+
+          </div>
+
+          <br/>         
+          <br/>
+
+          <!-- <button mat-button (click)="addSection()">Add Section</button> -->
+          <a class="btn btn-danger float-right" (click)="addSection()">Add Section</a>
+          <br />
+          <br />
+
+          <div class="">
+            <h1>Card</h1>
+          </div>
+
+          <br />
+          <br />
+         
+          <form>
+            <div class="form-group">
+                <fieldset class="form-group">
+    
+                    <!-- <label>Upload Logo</label> -->
+                    {{imageError}}
+                    <div class="custom-file fileInputProfileWrap">
+                        <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile" #fileInput>
+                        <div class="card-img-space">
+    
+                            <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                <img [src]="cardImageBase64" />
+                            </ng-container>
+                            <ng-template #elseTemplate>
+    
+                                <img src="./../../assets/images/placeholder.jpg" class="img-responsive">
+                            </ng-template>
+    
+                        </div>
+    
+                    </div>
+                </fieldset>
+            </div>
+            <br/>
+
+            <a class="btn btn-danger float-right" (click)="removeImage()" *ngIf="isImageSaved">Remove</a>
+            <a class="btn btn-danger float-right" (click)="fileInput.click()" *ngIf="isImageSaved == false">Add Card</a>
+
+            <br/>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardTitle"
+                matInput
+                placeholder="The name of the game:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardDeveloper"
+                matInput
+                placeholder="Developed by:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardPublisher"
+                matInput
+                placeholder="Published by:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardReleased"
+                matInput
+                placeholder="Released at:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardGenre"
+                matInput
+                placeholder="The genre is:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardGameplay"
+                matInput
+                placeholder="The gameplay type is:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardPlatforms"
+                matInput
+                placeholder="Supported platforms are:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <!-- <mat-label>This field is required</mat-label> -->
+              <textarea
+                formControlName="cardRequirements"
+                matInput
+                placeholder="The requirements to run are:"
+                value=""
+              ></textarea>
+            </mat-form-field>
+        </form>
+
+          <br />
+          <!-- <button mat-button (click)="addPhoto()" class="btn btn-danger">Add Card</button> -->
+          <!-- <a class="btn btn-danger float-right" (click)="fileInput.click()" *ngIf="isImageSaved == false">Add Card</a> -->
+
+          <!-- <br /> -->
+          <br />
+
+          <div class="">
+            <h1>Gallery</h1>
+          </div>
+
+          <br />
+          <br />
+
+          <div class="row">
+            <div class="col-md-3">
+              <form class="gallery-form">
+                <div class="form-group">
+                    <fieldset class="form-group">
+        
+                        {{imageError}}
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="galleryFileChangeEvent($event)" class="fileInputProfile" id="photo1" #galleryFileInput1>
+                            <div class="img-space">
+        
+                                <ng-container *ngIf="isGalleryImageSaved1; else elseTemplate">
+                                    <img [src]="galleryImageBase641" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+        
+                                    <img src="./../../assets/images/placeholder.jpg" class="img-responsive">
+                                </ng-template>
+        
+                            </div>
+        
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <br />
+                <a class="btn btn-danger float-right" (click)="removeGalleryImage($event)" *ngIf="isGalleryImageSaved1" id="photo1">Remove</a>
+                <a class="btn btn-danger float-right" (click)="galleryFileInput1.click()" *ngIf="isGalleryImageSaved1 == false">Add Photo</a>
+            </form>
+            </div>
+
+            <div class="col-md-3">
+
+              <form class="gallery-form">
+                <div class="form-group">
+                    <fieldset class="form-group">
+        
+                        {{imageError}}
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="galleryFileChangeEvent($event)" class="fileInputProfile" id="photo2" #galleryFileInput2>
+                            <div class="img-space">
+        
+                                <ng-container *ngIf="isGalleryImageSaved2; else elseTemplate">
+                                    <img [src]="galleryImageBase642" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+        
+                                    <img src="./../../assets/images/placeholder.jpg" class="img-responsive">
+                                </ng-template>
+        
+                            </div>
+        
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <br />
+                <a class="btn btn-danger float-right" (click)="removeGalleryImage($event)" *ngIf="isGalleryImageSaved2" id="photo2">Remove</a>
+                <a class="btn btn-danger float-right" (click)="galleryFileInput2.click()" *ngIf="isGalleryImageSaved2 == false">Add Photo</a>
+            </form>
+            </div>
+
+            <div class="col-md-3">
+              <form class="gallery-form">
+                <div class="form-group">
+                    <fieldset class="form-group">
+        
+                        {{imageError}}
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="galleryFileChangeEvent($event)" class="fileInputProfile" id="photo3" #galleryFileInput3>
+                            <div class="img-space">
+        
+                                <ng-container *ngIf="isGalleryImageSaved3; else elseTemplate">
+                                    <img [src]="galleryImageBase643" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+        
+                                    <img src="./../../assets/images/placeholder.jpg" class="img-responsive">
+                                </ng-template>
+        
+                            </div>
+        
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <br />
+                <a class="btn btn-danger float-right" (click)="removeGalleryImage($event)" *ngIf="isGalleryImageSaved3" id="photo3">Remove</a>
+                <a class="btn btn-danger float-right" (click)="galleryFileInput3.click()" *ngIf="isGalleryImageSaved3 == false">Add Photo</a>
+            </form>
+            </div>
+
+            <div class="col-md-3">
+              <form class="gallery-form">
+                <div class="form-group">
+                    <fieldset class="form-group">
+        
+                        {{imageError}}
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="galleryFileChangeEvent($event)" class="fileInputProfile" id="photo4" #galleryFileInput4>
+                            <div class="img-space">
+        
+                                <ng-container *ngIf="isGalleryImageSaved4; else elseTemplate">
+                                    <img [src]="galleryImageBase644" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+        
+                                    <img src="./../../assets/images/placeholder.jpg" class="img-responsive">
+                                </ng-template>
+        
+                            </div>
+        
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <br />
+                <a class="btn btn-danger float-right" (click)="removeGalleryImage($event)" *ngIf="isGalleryImageSaved4" id="photo4">Remove</a>
+                <a class="btn btn-danger float-right" (click)="galleryFileInput4.click()" *ngIf="isGalleryImageSaved4 == false">Add Photo</a>
+            </form>
+            </div>
+          </div>
+          
+          <br />
+          <br />
+
+          <button mat-button (click)="post()">Post</button>
+          <button mat-button (click)="get()">Get Articles</button>
+          <button mat-button (click)="put()">Update</button>
+          <button mat-button (click)="delete()">Delete</button>
+          <button mat-button (click)="register()">Register</button>
+          <button mat-button (click)="login()">Login</button>
+          <button mat-button (click)="createAuthor()">Create Author</button>
+        </form>
+      </div>
+
+      <!-- <button routerLink="/posts">Post</button> -->
+    </mat-card>
+  </div>
+</div>

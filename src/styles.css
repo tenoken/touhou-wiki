@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.touhou-bg-image {
+    background-image: url("https://a-static.besthdwallpaper.com/touhou-project-reimu-hakurei-e-marisa-kirisame-papel-de-parede-1920x1080-18454_48.jpg");
+    background-size: cover;
+}
+
+.home {
+    background: linear-gradient( rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.651) ), url('assets/images/touhou-anime-girls-hakurei-reimu-patterns-wallpaper-preview.jpg');
+   -webkit-background-size: cover;
+   -moz-background-size:  cover;
+   -o-background-size: cover;
+   background-size: cover;
+   /* height: auto; */
+ }
+ 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* .toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+} */
+
+/* .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: rgb(156, 94, 72);
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+} */
+
+.headline {
+  background-image: url('assets/images/yinyangz.png');
+  background-repeat: no-repeat;
+  background-position: left 75%;
+  padding-left: 22px;
+  padding-top: 22px;
+}

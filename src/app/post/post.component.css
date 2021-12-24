@@ -1,0 +1,23 @@
+.example-card {
+    /* max-width: 400px; */
+    margin-bottom: 4%;
+}
+  
+.example-header-image {
+    /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+    background-image: url('https://a.akatsuki.pw/32579');
+    background-size: cover;
+    background-size: cover;
+}
+
+.center {
+    margin: auto;
+    margin-top: 1%;
+    width: 50%;
+    margin-bottom: 6%;
+    width: 38%;
+}
+
+mat-icon {
+    font-size: 14px;
+}

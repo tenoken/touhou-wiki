@@ -1,0 +1,121 @@
+mat-card{
+    margin: 3%;
+}
+
+mat-card-title{
+    
+    margin-bottom: 1%;
+    /* text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: gray; */
+
+}
+
+h1, h2 {
+    border-bottom-color: #7384b5;
+}
+h1, h2 {
+    margin-bottom: .6em;
+}
+h2 {
+    font-size: 150%;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    background: 0 0;
+    font-weight: 400;
+    margin: 0;
+    overflow: hidden;
+    padding-top: .5em;
+    padding-bottom: .17em;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+mat-card-footer {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.article-card-image {
+    width: 100%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.center-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description{
+    background-color: rgb(156, 94, 72);
+    color: white;
+    border: whitesmoke solid 1px;
+}
+
+.content {
+    border: whitesmoke solid 1px;
+    background-color: white;
+    /* padding-left: 3%; */
+}
+
+.cell-padding{
+    margin: 3%;
+}
+
+.main-card-wrap{
+    background-color: white;
+}
+
+.content-card {
+    box-shadow: none;
+}
+
+.gallery-box{
+    margin-top: 6%;
+    /* margin-left: 1%; */
+
+    
+    /* padding-left: 5%;
+    padding-top: 5%; */
+}
+
+.gallery-block{
+    
+    display: inline-block;
+    margin-left: 3%;
+    padding: 1%;
+    background-color: lightslategray;
+
+}
+
+.image-wrapper{
+    margin: auto;
+}
+
+.gallery-image{
+    /* width: 120px; */
+    max-height: 154px;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+mat-grid-tile {
+    background: lightblue;
+}
+
+.first-child{
+    margin: 0%;
+}
+
+.headline {
+    background-image: url(../../assets/images/yinyangz.png);
+    background-repeat: no-repeat;
+    /* width: 25px; */
+    background-position: left 75%;
+    padding-left: 22px;
+    padding-top: 22px;
+}
